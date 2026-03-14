@@ -19,7 +19,7 @@ const About = () => {
               About Me
             </h2>
             <p className="mt-4 text-lg text-foreground/80">
-              I'm a passionate AI Developer and Software Engineer specializing in building intelligent systems and scalable applications. With expertise in machine learning, computer vision, and full-stack development, I create solutions that solve real-world problems.
+              I&apos;m a passionate AI Developer and Software Engineer specializing in building intelligent systems and scalable applications. With expertise in machine learning, computer vision, and full-stack development, I create solutions that solve real-world problems.
             </p>
             <p className="mt-4 text-lg text-foreground/80">
               Currently pursuing my studies while working on innovative projects, I thrive on challenges and continuously learn new technologies. My goal is to leverage AI and software engineering to build applications that not only perform exceptionally but also provide outstanding user experiences.

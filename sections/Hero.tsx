@@ -32,7 +32,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          Hi, I'm Dhruv
+          Hi, I&apos;m Dhruv
         </motion.h1>
         <motion.p
           className="mt-2 font-heading text-lg text-primary md:text-2xl"

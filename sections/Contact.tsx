@@ -22,7 +22,7 @@ const Contact = () => {
             Get In Touch
           </h2>
           <p className="mt-4 text-lg text-foreground/80">
-            I'm always open to discussing new projects, creative ideas, or opportunities to be part of an amazing team.
+            I&apos;m always open to discussing new projects, creative ideas, or opportunities to be part of an amazing team.
           </p>
         </motion.div>
         <div className="mt-12 grid grid-cols-1 gap-12 md:grid-cols-2">

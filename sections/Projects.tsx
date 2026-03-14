@@ -29,7 +29,7 @@ const Projects = () => {
             My Projects
           </h2>
           <p className="mt-4 text-lg text-foreground/80">
-            Here are some of the projects I've worked on.
+            Here are some of the projects I&apos;ve worked on.
           </p>
         </motion.div>
         <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">

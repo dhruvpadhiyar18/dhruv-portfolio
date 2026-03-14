@@ -177,10 +177,3 @@ export const GITHUB_STATS = {
     { name: "C++", percentage: 10, color: "#00599C" },
   ],
 };
-        description: "Participated in a 24-hour hackathon focused on building AI-powered SaaS applications.",
-    },
-    {
-        title: "Top 1% on LeetCode",
-        description: "Achieved a ranking in the top 1% of users on LeetCode through consistent problem-solving.",
-    },
-];
