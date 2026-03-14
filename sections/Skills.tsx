@@ -36,8 +36,8 @@ const Skills = () => {
                 <Image
                   src={skill.icon}
                   alt={skill.title}
-                  layout="fill"
-                  objectFit="contain"
+                  fill
+                  style={{ objectFit: "contain" }}
                 />
               </div>
               <p className="text-center font-medium">{skill.title}</p>

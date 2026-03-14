@@ -47,8 +47,8 @@ const Projects = () => {
                     <Image
                       src={project.image}
                       alt={project.title}
-                      layout="fill"
-                      objectFit="cover"
+                      fill
+                      style={{ objectFit: "cover" }}
                     />
                   </div>
                   <CardTitle className="mt-4">{project.title}</CardTitle>

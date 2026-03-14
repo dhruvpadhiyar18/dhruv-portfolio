@@ -19,6 +19,7 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: "Dhruv - AI Developer & Software Engineer",
   description: "Dhruv is an AI Developer and Software Engineer who builds intelligent systems, AI-powered applications, and scalable SaaS products that solve real-world problems.",
+  metadataBase: new URL("https://dhruv-portfolio.vercel.app"), // Replace with your deployment URL
   openGraph: {
     title: "Dhruv's Portfolio",
     description: "Dhruv is an AI Developer and Software Engineer who builds intelligent systems, AI-powered applications, and scalable SaaS products that solve real-world problems.",

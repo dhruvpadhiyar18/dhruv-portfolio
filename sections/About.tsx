@@ -35,7 +35,7 @@ const About = () => {
             <Image
               src="/profile-placeholder.svg"
               alt="Profile Picture"
-              layout="fill"
+              fill
               className="rounded-full object-cover"
             />
           </motion.div>
