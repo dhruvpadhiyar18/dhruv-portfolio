@@ -1,36 +1,87 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Modern Developer Portfolio
+
+This is a modern developer portfolio website built with Next.js, Tailwind CSS, and other modern technologies.
+
+## Features
+
+- **Framework**: Next.js (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **UI Components**: shadcn/ui
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **SEO Optimized**: Meta tags, OpenGraph, and Twitter cards.
+- **Responsive Design**: Fully responsive for mobile, tablet, and desktop.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js (v18.17.0 or later)
+- npm
+
+### Installation
+
+1.  Clone the repository:
+    ```bash
+    git clone https://github.com/your-username/your-repo-name.git
+    ```
+2.  Navigate to the project directory:
+    ```bash
+    cd your-repo-name
+    ```
+3.  Install the dependencies:
+    ```bash
+    npm install
+    ```
+
+### Running the Development Server
+
+To run the development server, use the following command:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project is ready to be deployed on [Vercel](https://vercel.com/).
 
-## Learn More
+### Deploying to Vercel
 
-To learn more about Next.js, take a look at the following resources:
+1.  Push your code to a Git repository (e.g., GitHub).
+2.  Sign up for a Vercel account at [vercel.com](https://vercel.com/).
+3.  Connect your Git repository to Vercel.
+4.  Vercel will automatically detect that you are using Next.js and will configure the build settings for you.
+5.  Deploy the project.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Vercel will handle the rest, and your portfolio will be live in a few minutes.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Customization
 
-## Deploy on Vercel
+### Portfolio Data
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+All the portfolio data (skills, projects, achievements) is located in the `data/index.ts` file. You can easily update this file to reflect your own information.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Styling
+
+The global styles and color palette are defined in `app/globals.css`. You can customize the colors and other styles to match your personal brand. The typography is defined in `app/layout.tsx` and `tailwind.config.ts`.
+
+### Placeholders
+
+The project uses placeholder images for the profile picture, project screenshots, and OpenGraph image. You should replace these placeholders with your own images:
+
+-   `public/profile-placeholder.svg`: Your profile picture.
+-   `public/project-placeholder.svg`: Screenshots of your projects.
+-   `public/og-image.svg`: Your OpenGraph image.
+-   `public/favicon.svg`: Your favicon.
+-   `public/apple-touch-icon.svg`: Your Apple touch icon.
+
+You should also replace the placeholder URLs and social media handles in the following files:
+
+-   `sections/Hero.tsx`
+-   `sections/Contact.tsx`
+-   `components/Footer.tsx`
+-   `app/layout.tsx` (for SEO metadata)
