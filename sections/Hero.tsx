@@ -61,7 +61,7 @@ const Hero = () => {
             <Link href="#projects">View Projects</Link>
           </Button>
           <Button asChild size="lg" variant="secondary">
-            <Link href="/resume.pdf" target="_blank">
+            <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
               Download Resume
             </Link>
           </Button>
@@ -75,13 +75,13 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.8 }}
         >
-          <Link href="https://github.com/example" target="_blank">
+          <Link href="https://github.com/dhruvpadhiyar18" target="_blank" rel="noopener noreferrer">
             <Github className="h-6 w-6 text-foreground/80 transition-colors hover:text-primary" />
           </Link>
-          <Link href="https://linkedin.com/in/example" target="_blank">
+          <Link href="https://linkedin.com/in/dhruv-padhiyar" target="_blank" rel="noopener noreferrer">
             <Linkedin className="h-6 w-6 text-foreground/80 transition-colors hover:text-primary" />
           </Link>
-          <Link href="https://twitter.com/example" target="_blank">
+          <Link href="https://twitter.com/dhruvpadhiyar18" target="_blank" rel="noopener noreferrer">
             <Twitter className="h-6 w-6 text-foreground/80 transition-colors hover:text-primary" />
           </Link>
         </motion.div>

@@ -3,7 +3,9 @@ import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 
+import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -74,7 +76,9 @@ export default function RootLayout({
           spaceGrotesk.variable
         )}
       >
+        <Navbar />
         {children}
+        <ScrollToTop />
         <Footer />
       </body>
     </html>

@@ -50,20 +50,20 @@ const Contact = () => {
           >
             <div className="flex items-center gap-4">
               <Mail className="h-6 w-6 text-primary" />
-              <a href="mailto:example@email.com" className="text-lg">
-                example@email.com
+              <a href="mailto:dhruvpadhiyar18@gmail.com" className="text-lg hover:text-primary transition-colors">
+                dhruvpadhiyar18@gmail.com
               </a>
             </div>
             <div className="flex items-center gap-4">
               <Github className="h-6 w-6 text-primary" />
-              <Link href="https://github.com/example" target="_blank" className="text-lg">
-                github.com/example
+              <Link href="https://github.com/dhruvpadhiyar18" target="_blank" rel="noopener noreferrer" className="text-lg hover:text-primary transition-colors">
+                github.com/dhruvpadhiyar18
               </Link>
             </div>
             <div className="flex items-center gap-4">
               <Linkedin className="h-6 w-6 text-primary" />
-              <Link href="https://linkedin.com/in/example" target="_blank" className="text-lg">
-                linkedin.com/in/example
+              <Link href="https://linkedin.com/in/dhruv-padhiyar" target="_blank" rel="noopener noreferrer" className="text-lg hover:text-primary transition-colors">
+                linkedin.com/in/dhruv-padhiyar
               </Link>
             </div>
           </motion.div>

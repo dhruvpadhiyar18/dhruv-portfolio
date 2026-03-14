@@ -15,13 +15,13 @@ const Footer = () => {
           <Link href="#contact">Contact</Link>
         </div>
         <div className="mt-4 flex gap-6 md:mt-0">
-          <Link href="https://github.com/example" target="_blank">
+          <Link href="https://github.com/dhruvpadhiyar18" target="_blank" rel="noopener noreferrer">
             <Github className="h-6 w-6 text-foreground/80 transition-colors hover:text-primary" />
           </Link>
-          <Link href="https://linkedin.com/in/example" target="_blank">
+          <Link href="https://linkedin.com/in/dhruv-padhiyar" target="_blank" rel="noopener noreferrer">
             <Linkedin className="h-6 w-6 text-foreground/80 transition-colors hover:text-primary" />
           </Link>
-          <Link href="https://twitter.com/example" target="_blank">
+          <Link href="https://twitter.com/dhruvpadhiyar18" target="_blank" rel="noopener noreferrer">
             <Twitter className="h-6 w-6 text-foreground/80 transition-colors hover:text-primary" />
           </Link>
         </div>

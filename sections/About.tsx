@@ -19,11 +19,25 @@ const About = () => {
               About Me
             </h2>
             <p className="mt-4 text-lg text-foreground/80">
-              I'm a passionate and driven software engineer with a strong interest in artificial intelligence, machine learning, and building innovative SaaS products. My journey in technology started with a fascination for how software can solve complex problems and create value in the world.
+              I'm a passionate AI Developer and Software Engineer specializing in building intelligent systems and scalable applications. With expertise in machine learning, computer vision, and full-stack development, I create solutions that solve real-world problems.
             </p>
             <p className="mt-4 text-lg text-foreground/80">
-              I thrive on challenges and am constantly learning new technologies and exploring new ideas. I'm dedicated to writing clean, efficient, and scalable code. My goal is to leverage my skills to build applications that are not only powerful but also provide a great user experience.
+              Currently pursuing my studies while working on innovative projects, I thrive on challenges and continuously learn new technologies. My goal is to leverage AI and software engineering to build applications that not only perform exceptionally but also provide outstanding user experiences.
             </p>
+            <div className="mt-6 flex flex-wrap gap-4">
+              <div className="rounded-lg bg-primary/10 px-4 py-2">
+                <span className="font-semibold text-primary">3+ Years</span>
+                <p className="text-sm text-foreground/80">Experience</p>
+              </div>
+              <div className="rounded-lg bg-primary/10 px-4 py-2">
+                <span className="font-semibold text-primary">50+ Projects</span>
+                <p className="text-sm text-foreground/80">Completed</p>
+              </div>
+              <div className="rounded-lg bg-primary/10 px-4 py-2">
+                <span className="font-semibold text-primary">15+ Technologies</span>
+                <p className="text-sm text-foreground/80">Mastered</p>
+              </div>
+            </div>
           </div>
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
