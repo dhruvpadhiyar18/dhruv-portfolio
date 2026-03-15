@@ -1,10 +1,9 @@
+
 "use client";
 
+import { mobileAppsData, projectsData } from "../data";
 import { motion } from "framer-motion";
-import { PROJECTS } from "@/data";
-import Image from "next/image";
-import Link from "next/link";
-import { Github } from "lucide-react";
+import { Section, SectionTitle } from "@/components/Section";
 import {
   Card,
   CardContent,
@@ -13,79 +12,144 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import Link from "next/link";
+import { Github, ExternalLink, Download } from "lucide-react";
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-24 sm:py-32">
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <h2 className="font-heading text-3xl font-bold md:text-4xl">
-            My Projects
-          </h2>
-          <p className="mt-4 text-lg text-foreground/80">
-            Here are some of the projects I&apos;ve worked on.
-          </p>
-        </motion.div>
-        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {PROJECTS.map((project, index) => (
+    <Section id="projects">
+      <SectionTitle>Featured Projects</SectionTitle>
+      <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
+        {projectsData.map((project, index) => (
+          <motion.div
+            key={project.title}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: index * 0.2 }}
+          >
+            <Card className="glassmorphism h-full flex flex-col">
+              <CardHeader>
+                <CardTitle className="text-xl font-bold font-heading">
+                  {project.title}
+                </CardTitle>
+                <div className="flex flex-wrap gap-2 pt-2">
+                  {project.tech.map((tech) => (
+                    <Badge key={tech} variant="secondary">
+                      {tech}
+                    </Badge>
+                  ))}
+                </div>
+              </CardHeader>
+              <CardContent className="flex-grow">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  width={800}
+                  height={450}
+                  className="rounded-lg mb-4"
+                />
+                <p className="text-text-secondary mb-4">
+                  {project.description}
+                </p>
+                <ul className="list-disc list-inside space-y-1">
+                  {project.features.map((feature) => (
+                    <li key={feature} className="text-text-secondary">
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+              <CardFooter className="flex gap-4">
+                <Button asChild>
+                  <Link href={project.github} target="_blank">
+                    <Github className="mr-2 h-4 w-4" />
+                    GitHub
+                  </Link>
+                </Button>
+                {project.live && (
+                  <Button variant="outline" asChild>
+                    <Link href={project.live} target="_blank">
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Live Demo
+                    </Link>
+                  </Button>
+                )}
+              </CardFooter>
+            </Card>
+          </motion.div>
+        ))}
+      </div>
+
+      <div className="mt-12">
+        <h3 className="text-2xl font-bold font-heading mb-6">
+          Mobile &amp; Software Applications
+        </h3>
+        <div className="grid md:grid-cols-1 lg:grid-cols-2 gap-8">
+          {mobileAppsData.map((app, index) => (
             <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.3, delay: index * 0.1 }}
+              key={app.name}
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: index * 0.2 }}
             >
-              <Card className="flex h-full flex-col overflow-hidden transition-shadow hover:shadow-lg hover:shadow-primary/20">
+              <Card className="glassmorphism h-full flex flex-col">
                 <CardHeader>
-                  <div className="relative h-48 w-full">
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      fill
-                      style={{ objectFit: "cover" }}
-                    />
-                  </div>
-                  <CardTitle className="mt-4">{project.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="flex-grow">
-                  <p className="text-foreground/80">{project.description}</p>
-                  <div className="mt-4 flex flex-wrap gap-2">
-                    {project.tech.map((t) => (
-                      <Badge key={t} variant="secondary">
-                        {t}
+                  <CardTitle className="text-xl font-bold font-heading">
+                    {app.name}
+                  </CardTitle>
+                  <p className="text-text-secondary">{app.description}</p>
+                  <div className="flex flex-wrap gap-2 pt-2">
+                    {app.tech.map((tech) => (
+                      <Badge key={tech} variant="secondary">
+                        {tech}
                       </Badge>
                     ))}
                   </div>
+                </CardHeader>
+                <CardContent className="flex-grow">
+                  <Image
+                    src={app.image}
+                    alt={`${app.name} Screenshot`}
+                    width={800}
+                    height={450}
+                    className="rounded-lg mb-4"
+                  />
+                  <ul className="list-disc list-inside space-y-1">
+                    {app.highlights.map((highlight) => (
+                      <li key={highlight} className="text-text-secondary">
+                        {highlight}
+                      </li>
+                    ))}
+                  </ul>
                 </CardContent>
-                <CardFooter className="flex justify-between">
-                  <Link
-                    href={project.github}
-                    target="_blank"
-                    className="flex items-center gap-2 text-foreground/80 transition-colors hover:text-primary"
-                  >
-                    <Github className="h-5 w-5" />
-                    GitHub
-                  </Link>
-                  <Link
-                    href={project.link}
-                    target="_blank"
-                    className="text-primary underline-offset-4 hover:underline"
-                  >
-                    Live Demo
-                  </Link>
+                <CardFooter className="flex gap-4">
+                  {app.github && (
+                    <Button asChild>
+                      <Link href={app.github} target="_blank">
+                        <Github className="mr-2 h-4 w-4" />
+                        View Code
+                      </Link>
+                    </Button>
+                  )}
+                  {app.download && (
+                    <Button variant="outline" asChild>
+                      <Link href={app.download} target="_blank">
+                        <Download className="mr-2 h-4 w-4" />
+                        Download
+                      </Link>
+                    </Button>
+                  )}
                 </CardFooter>
               </Card>
             </motion.div>
           ))}
         </div>
       </div>
-    </section>
+    </Section>
   );
 };
 

@@ -1,7 +1,9 @@
+
 import About from "@/sections/About";
-import Achievements from "@/sections/Achievements";
 import Blog from "@/sections/Blog";
 import Contact from "@/sections/Contact";
+import Education from "@/sections/Education";
+import Experience from "@/sections/Experience";
 import GithubActivity from "@/sections/GithubActivity";
 import Hero from "@/sections/Hero";
 import Projects from "@/sections/Projects";
@@ -14,11 +16,13 @@ export default function Home() {
       <About />
       <Skills />
       <Projects />
-      <Achievements />
+      <Experience />
+      <Education />
       <GithubActivity />
       <Blog />
       <Contact />
     </main>
   );
 }
+
 

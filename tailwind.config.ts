@@ -9,7 +9,9 @@ const config = {
     './components/**/*.{ts,tsx}',
     './app/**/*.{ts,tsx}',
     './src/**/*.{ts,tsx}',
-	],
+    './data/**/*.{ts,tsx}',
+    './sections/**/*.{ts,tsx}',
+  ],
   prefix: "",
   theme: {
     container: {
@@ -25,10 +27,15 @@ const config = {
         heading: ["var(--font-heading)"],
       },
       colors: {
+        background: "#0B0F19",
+        surface: "#111827",
+        "primary-accent": "#6366F1",
+        "secondary-accent": "#22C55E",
+        "text-primary": "#E5E7EB",
+        "text-secondary": "#9CA3AF",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
@@ -73,14 +80,20 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "gradient-bg": {
+          "0%": { backgroundPosition: "0% 50%" },
+          "50%": { backgroundPosition: "100% 50%" },
+          "100%": { backgroundPosition: "0% 50%" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "gradient-bg": "gradient-bg 15s ease infinite",
       },
     },
   },
   plugins: [tailwindcssAnimate],
 } satisfies Config
 
-export default config
+export default config;

@@ -1,89 +1,72 @@
+
 "use client";
 
+import { heroData } from "../data";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Twitter } from "lucide-react";
 import Link from "next/link";
 
 const Hero = () => {
   return (
-    <section className="relative flex h-screen items-center justify-center">
-      {/* Animated background */}
-      <div className="absolute inset-0 z-0">
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500"
-          animate={{
-            scale: [1, 1.05, 1],
-            rotate: [0, 1, -1, 0],
-          }}
-          transition={{
-            duration: 10,
-            repeat: Infinity,
-            repeatType: "mirror",
-          }}
-        />
-        <div className="absolute inset-0 bg-background/80 backdrop-blur-sm" />
-      </div>
-
-      <div className="relative z-10 flex flex-col items-center text-center">
+    <section
+      id="home"
+      className="relative min-h-screen flex items-center justify-center"
+    >
+      <div className="absolute inset-0 -z-10 h-full w-full bg-background bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px]"></div>
+      <div className="absolute inset-0 -z-10 h-full w-full bg-gradient-to-br from-primary-accent/10 via-transparent to-secondary-accent/10 animate-gradient-bg"></div>
+      <div className="container mx-auto px-4 text-center">
         <motion.h1
-          className="font-heading text-4xl font-bold md:text-7xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.8 }}
+          className="font-heading text-5xl md:text-6xl font-bold"
         >
-          Hi, I&apos;m Dhruv
+          {heroData.name}
         </motion.h1>
         <motion.p
-          className="mt-2 font-heading text-lg text-primary md:text-2xl"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mt-4 text-lg md:text-xl text-text-secondary"
         >
-          AI Developer & Software Engineer
+          {heroData.title}
         </motion.p>
         <motion.p
-          className="mt-4 max-w-2xl text-base text-foreground/80 md:text-lg"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="mt-6 max-w-2xl mx-auto text-base text-text-secondary"
         >
-          I build intelligent systems, AI-powered applications, and scalable
-          SaaS products that solve real-world problems.
+          {heroData.description}
         </motion.p>
         <motion.div
-          className="mt-8 flex flex-wrap justify-center gap-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="mt-8 flex justify-center gap-4"
         >
-          <Button asChild size="lg">
-            <Link href="#projects">View Projects</Link>
-          </Button>
-          <Button asChild size="lg" variant="secondary">
-            <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-              Download Resume
-            </Link>
-          </Button>
-          <Button asChild size="lg" variant="outline">
-            <Link href="#contact">Contact Me</Link>
-          </Button>
-        </motion.div>
-        <motion.div
-          className="mt-8 flex gap-6"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.8 }}
-        >
-          <Link href="https://github.com/dhruvpadhiyar18" target="_blank" rel="noopener noreferrer">
-            <Github className="h-6 w-6 text-foreground/80 transition-colors hover:text-primary" />
-          </Link>
-          <Link href="https://linkedin.com/in/dhruv-padhiyar" target="_blank" rel="noopener noreferrer">
-            <Linkedin className="h-6 w-6 text-foreground/80 transition-colors hover:text-primary" />
-          </Link>
-          <Link href="https://twitter.com/dhruvpadhiyar18" target="_blank" rel="noopener noreferrer">
-            <Twitter className="h-6 w-6 text-foreground/80 transition-colors hover:text-primary" />
-          </Link>
+          {heroData.cta.map((item) => {
+            if (item.download || item.external) {
+              return (
+                <Button key={item.label} asChild>
+                  <a
+                    href={item.link}
+                    download={item.download}
+                    target={item.external ? "_blank" : undefined}
+                    rel={item.external ? "noopener noreferrer" : undefined}
+                  >
+                    {item.label}
+                  </a>
+                </Button>
+              );
+            }
+
+            return (
+              <Button key={item.label} asChild>
+                <Link href={item.link}>{item.label}</Link>
+              </Button>
+            );
+          })}
         </motion.div>
       </div>
     </section>

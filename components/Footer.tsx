@@ -1,29 +1,26 @@
-import { Github, Linkedin, Twitter } from "lucide-react";
+
+import { socialLinks } from "@/data";
 import Link from "next/link";
 
 const Footer = () => {
   return (
     <footer className="border-t py-8">
-      <div className="container mx-auto flex flex-col items-center justify-between px-4 md:flex-row">
-        <p className="text-sm text-foreground/80">
-          © {new Date().getFullYear()} Dhruv. All rights reserved.
+      <div className="container mx-auto flex items-center justify-between px-4">
+        <p className="text-sm text-text-secondary">
+          © {new Date().getFullYear()} Dhruv Padhiyar. All rights reserved.
         </p>
-        <div className="mt-4 flex gap-6 md:mt-0">
-          <Link href="#about">About</Link>
-          <Link href="#skills">Skills</Link>
-          <Link href="#projects">Projects</Link>
-          <Link href="#contact">Contact</Link>
-        </div>
-        <div className="mt-4 flex gap-6 md:mt-0">
-          <Link href="https://github.com/dhruvpadhiyar18" target="_blank" rel="noopener noreferrer">
-            <Github className="h-6 w-6 text-foreground/80 transition-colors hover:text-primary" />
-          </Link>
-          <Link href="https://linkedin.com/in/dhruv-padhiyar" target="_blank" rel="noopener noreferrer">
-            <Linkedin className="h-6 w-6 text-foreground/80 transition-colors hover:text-primary" />
-          </Link>
-          <Link href="https://twitter.com/dhruvpadhiyar18" target="_blank" rel="noopener noreferrer">
-            <Twitter className="h-6 w-6 text-foreground/80 transition-colors hover:text-primary" />
-          </Link>
+        <div className="flex gap-6">
+          {socialLinks.map((item) => (
+            <Link
+              key={item.label}
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-text-secondary transition-colors hover:text-primary-accent"
+            >
+              <item.icon className="h-6 w-6" />
+            </Link>
+          ))}
         </div>
       </div>
     </footer>
@@ -31,3 +28,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

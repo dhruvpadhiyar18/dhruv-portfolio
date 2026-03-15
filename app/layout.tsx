@@ -1,22 +1,8 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
-import { cn } from "@/lib/utils";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ScrollToTop from "@/components/ScrollToTop";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
-
-const spaceGrotesk = Space_Grotesk({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-heading",
-});
 
 export const metadata: Metadata = {
   title: "Dhruv - AI Developer & Software Engineer",
@@ -69,16 +55,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          inter.variable,
-          spaceGrotesk.variable
-        )}
-      >
+      <body className="min-h-screen bg-background font-sans antialiased">
         <Navbar />
         {children}
-        <ScrollToTop />
         <Footer />
       </body>
     </html>

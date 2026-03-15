@@ -1,179 +1,328 @@
-export const SKILLS = [
+
+import {
+  Github,
+  Home,
+  Linkedin,
+  Notebook,
+  User,
+} from "lucide-react";
+import {
+  EducationProps,
+  MobileAppProps,
+  ProjectProps,
+  SkillProps,
+  SocialProps,
+} from "../types";
+
+export const socialLinks: SocialProps[] = [
   {
-    title: "Python",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
+    label: "Github",
+    link: "https://github.com/dhruvpadhiyar18",
+    icon: Github,
   },
   {
-    title: "JavaScript",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-  },
-  {
-    title: "TypeScript",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
-  },
-  {
-    title: "C++",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
-  },
-  {
-    title: "OpenCV",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg",
-  },
-  {
-    title: "Machine Learning",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg",
-  },
-  {
-    title: "TensorFlow",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg",
-  },
-  {
-    title: "PyTorch",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg",
-  },
-  {
-    title: "React",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-  },
-  {
-    title: "Next.js",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
-  },
-  {
-    title: "Tailwind CSS",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg",
-  },
-  {
-    title: "Node.js",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
-  },
-  {
-    title: "Git",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
-  },
-  {
-    title: "GitHub",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg",
-  },
-  {
-    title: "Supabase",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg",
-  },
-  {
-    title: "Docker",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg",
+    label: "LinkedIn",
+    link: "https://www.linkedin.com/in/dhruvpadhiyar18",
+    icon: Linkedin,
   },
 ];
 
-export const PROJECTS = [
+export const navLinks = [
   {
-    title: "AI Smart Attendance System",
+    label: "Home",
+    link: "#home",
+    icon: Home,
+  },
+  {
+    label: "About",
+    link: "#about",
+    icon: User,
+  },
+  {
+    label: "Projects",
+    link: "#projects",
+    icon: Notebook,
+  },
+];
+
+export const heroData = {
+  name: "Dhruv Padhiyar",
+  title: "AI Developer • Automation Engineer • Computer Vision Enthusiast",
+  description:
+    "I build intelligent systems, AI-powered tools, and automation solutions that solve real-world problems.",
+  cta: [
+    {
+      label: "View Projects",
+      link: "#projects",
+      external: false,
+      download: false,
+    },
+    {
+      label: "Github",
+      link: "https://github.com/dhruvpadhiyar18",
+      external: true,
+      download: false,
+    },
+    {
+      label: "Download Resume",
+      link: "/dhruv-padhiyar-resume.pdf",
+      external: false,
+      download: true,
+    },
+    {
+      label: "Contact",
+      link: "#contact",
+      external: false,
+      download: false,
+    },
+  ],
+};
+
+export const aboutData = {
+  description:
+    "I am a Computer Science student specializing in Data Science with a strong interest in artificial intelligence, automation, and scalable software systems. I have hands-on experience building AI-assisted tools, computer vision applications, and workflow automation systems using Python, OpenCV, Flask, and modern frameworks. During my internship at Knowledge Square Services LLP, I worked on AI-powered automation solutions and mentored interns in Python and prompt engineering.",
+  image: "/dhruv-profile.jpeg",
+};
+
+export const skillsData: SkillProps[] = [
+  {
+    label: "Python",
+    category: "Programming",
+  },
+  {
+    label: "C",
+    category: "Programming",
+  },
+  {
+    label: "C++",
+    category: "Programming",
+  },
+  {
+    label: "JavaScript",
+    category: "Programming",
+  },
+  {
+    label: "OpenCV",
+    category: "AI & Computer Vision",
+  },
+  {
+    label: "Face Recognition",
+    category: "AI & Computer Vision",
+  },
+  {
+    label: "Generative AI",
+    category: "AI & Computer Vision",
+  },
+  {
+    label: "LLM Applications",
+    category: "AI & Computer Vision",
+  },
+  {
+    label: "Flask",
+    category: "Backend",
+  },
+  {
+    label: "REST APIs",
+    category: "Backend",
+  },
+  {
+    label: "JSON Processing",
+    category: "Backend",
+  },
+  {
+    label: "n8n Workflow Automation",
+    category: "Automation",
+  },
+  {
+    label: "API Integration",
+    category: "Automation",
+  },
+  {
+    label: "Git",
+    category: "Tools",
+  },
+  {
+    label: "GitHub",
+    category: "Tools",
+  },
+  {
+    label: "Vercel",
+    category: "Tools",
+  },
+  {
+    label: "Netlify",
+    category: "Tools",
+  },
+];
+
+export const projectsData: ProjectProps[] = [
+  {
+    title: "Face Recognition Attendance System",
     description:
-      "Face recognition based attendance system with analytics dashboard for educational institutions. Built with Python, OpenCV, and Flask backend with React frontend.",
-    tech: ["Python", "OpenCV", "Flask", "React", "PostgreSQL"],
-    github: "https://github.com/dhruvpadhiyar18/ai-smart-attendance",
-    link: "https://ai-attendance-demo.vercel.app",
+      "AI-based system for automated attendance tracking using computer vision.",
+    tech: ["Python", "OpenCV", "Flask"],
+    features: [
+      "Real-time face recognition",
+      "Teacher/student portal",
+      "Automated attendance tracking",
+    ],
+    github: "https://github.com/dhruvpadhiyar18/face-recognition-attendance-system",
+    live: "",
     image: "/project-placeholder.svg",
   },
   {
-    title: "AI Resume Analyzer",
+    title: "Jarvis AI Assistant",
     description:
-      "AI-powered tool that analyzes resumes using NLP and provides detailed feedback, suggestions, and scoring. Built with FastAPI backend and Next.js frontend.",
-    tech: ["Python", "NLP", "FastAPI", "Next.js", "OpenAI"],
-    github: "https://github.com/dhruvpadhiyar18/ai-resume-analyzer",
-    link: "https://resume-analyzer-ai.vercel.app",
+      "Jarvis AI Assistant is a modular Python-based command-line assistant that supports text and voice commands to automate tasks, fetch web info (weather/news/search), and generate AI responses using OpenAI.",
+    tech: [
+      "Python",
+      "OpenAI API",
+      "python-dotenv",
+      "SpeechRecognition",
+      "pyttsx3",
+      "PyAudio",
+      "requests",
+      "wikipedia",
+    ],
+    features: [
+      "Supports both text and voice commands",
+      "Automates web tasks like weather, news, and search",
+      "Generates AI responses using OpenAI",
+    ],
+    github: "https://github.com/dhruvpadhiyar18/Jarvis-AI-Assistant",
+    live: "",
     image: "/project-placeholder.svg",
   },
   {
-    title: "Personal Developer Portfolio",
+    title: "AI Academic Paper Review & Feedback Tool",
     description:
-      "Modern, responsive developer portfolio built with Next.js 14, Tailwind CSS, and Framer Motion. Features smooth animations and optimized performance.",
-    tech: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"],
-    github: "https://github.com/dhruvpadhiyar18/dhruv-portfolio",
-    link: "https://dhruv-portfolio.vercel.app",
-    image: "/project-placeholder.svg",
-  },
-  {
-    title: "E-Commerce Platform",
-    description:
-      "Full-stack e-commerce solution with payment integration, inventory management, and admin dashboard. Built with Next.js and Supabase.",
-    tech: ["Next.js", "Supabase", "Stripe", "Tailwind CSS"],
-    github: "https://github.com/dhruvpadhiyar18/ecommerce-platform",
-    link: "https://ecommerce-platform-demo.vercel.app",
-    image: "/project-placeholder.svg",
-  },
-  {
-    title: "Real-time Chat Application",
-    description:
-      "Scalable real-time chat app with WebSocket integration, user authentication, and message encryption. Built with Socket.io and React.",
-    tech: ["React", "Node.js", "Socket.io", "MongoDB"],
-    github: "https://github.com/dhruvpadhiyar18/realtime-chat",
-    link: "https://chat-app-demo.vercel.app",
-    image: "/project-placeholder.svg",
-  },
-  {
-    title: "Weather Analytics Dashboard",
-    description:
-      "Interactive dashboard for weather data visualization with predictive analytics. Built with Python, FastAPI, and D3.js.",
-    tech: ["Python", "FastAPI", "D3.js", "PostgreSQL"],
-    github: "https://github.com/dhruvpadhiyar18/weather-dashboard",
-    link: "https://weather-analytics.vercel.app",
+      "This project is a web-based Academic Paper Review Tool that helps evaluate paper sections (Title, Abstract, Introduction, Methodology, Results, Conclusion, References) and gives structured feedback for better research quality.",
+    tech: ["React 18", "TypeScript", "Vite", "Tailwind CSS", "Lucide React"],
+    features: [
+      "Structured review output: Strengths",
+      "Structured review output: Areas to Improve",
+      "Structured review output: Actionable Suggestions",
+      "AI prompt template for external AI review",
+      "Export feedback as a text file",
+    ],
+    github: "https://github.com/dhruvpadhiyar18/ai-academic-paper-review-tool",
+    live: "",
     image: "/project-placeholder.svg",
   },
 ];
 
-export const ACHIEVEMENTS = [
+export const mobileAppsData: MobileAppProps[] = [
   {
-    title: "OceanLab × CHARUSAT AI SaaS Hackathon Participant",
-    description: "Participated in a 24-hour hackathon focused on building AI-powered SaaS applications and presented innovative solutions.",
+    name: "Consistancy",
+    description:
+      "Consistancy is an education-focused Android app published on the Indus App Store, designed to help users stay consistent with daily goals.",
+    tech: ["Android", "Java", "API"],
+    highlights: [
+      "Published on the Indus App Store",
+      "Focused on consistency-building for learners",
+    ],
+    github: "https://github.com/dhruvpadhiyar18/Consistancy-App",
+    download:
+      "https://www.indusappstore.com/apps/education/consistancy/com.consistancy.app/?page=details&id=com.consistancy.app",
+    image: "/project-placeholder.svg",
   },
   {
-    title: "Top 1% on LeetCode",
-    description: "Achieved a ranking in the top 1% of users on LeetCode through consistent problem-solving and algorithmic challenges.",
+    name: "StockEase",
+    description:
+      "StockEase is a professional offline-first inventory management Android app built with Kotlin, Room Database, and MVVM. It digitizes local grocery store operations with stock tracking, sales reporting, and low-stock alerts.",
+    tech: [
+      "Kotlin",
+      "MVVM",
+      "Room",
+      "Kotlin Coroutines",
+      "Material Design",
+      "ViewBinding",
+      "GSON",
+      "LiveData",
+      "ViewModel",
+      "App Startup",
+    ],
+    highlights: [
+      "Inventory tracking with low-stock alerts",
+      "Sales management with automatic stock updates",
+      "Daily sales summaries and stock movement reporting",
+      "Custom 30-day trial with soft lock and developer unlock flow",
+      "Secure JSON backup and restore with trial identity stamping",
+    ],
+    github: "https://github.com/dhruvpadhiyar18/StockEase",
+    download: "",
+    image: "/project-placeholder.svg",
   },
   {
-    title: "Google Developer Student Club Lead",
-    description: "Led a community of 200+ students, organized workshops, and mentored junior developers in modern web technologies.",
-  },
-  {
-    title: "Open Source Contributor",
-    description: "Active contributor to various open-source projects, with 50+ merged pull requests across different repositories.",
+    name: "SaveMore",
+    description:
+      "SaveMore is a privacy-first, offline-only money discipline tool for Android, built with modern Android development best practices. It helps users track income and expenses, set savings goals, and get actionable spending insights without connecting to the internet.",
+    tech: [
+      "Kotlin",
+      "Jetpack Compose",
+      "Material 3",
+      "MVVM",
+      "Room Database",
+      "DataStore",
+      "Coroutines",
+      "Flow",
+      "Gradle Kotlin DSL",
+      "Version Catalog",
+    ],
+    highlights: [
+      "100% offline and private with no internet permission",
+      "Net balance tracking with clear income vs spending view",
+      "Fast transaction logging with custom categories and notes",
+      "Goal-oriented savings tracking with automatic progress updates",
+      "Balance reconciliation to align in-app and real-world cash",
+      "Safe atomic transaction edits to prevent data corruption",
+      "Clean architecture with separated UI, ViewModel, Repository, and Data layers",
+    ],
+    github: "https://github.com/dhruvpadhiyar18/SaveMore-Android-App",
+    download: "",
+    image: "/project-placeholder.svg",
   },
 ];
 
-export const BLOGS = [
+export const experienceData = [
   {
-    title: "Building AI-Powered Applications with Next.js",
-    description: "Learn how to integrate AI capabilities into your Next.js applications using modern APIs and best practices.",
-    date: "2024-03-15",
-    readTime: "5 min read",
-    link: "/blog/ai-nextjs-integration",
-  },
-  {
-    title: "Machine Learning Model Deployment Strategies",
-    description: "A comprehensive guide to deploying ML models in production environments with scalability and performance in mind.",
-    date: "2024-02-28",
-    readTime: "8 min read",
-    link: "/blog/ml-deployment-strategies",
-  },
-  {
-    title: "The Future of Web Development with AI",
-    description: "Exploring how artificial intelligence is reshaping the landscape of web development and what developers need to know.",
-    date: "2024-02-10",
-    readTime: "6 min read",
-    link: "/blog/ai-web-development-future",
+    title: "Prompt Engineering & AI Automation Intern",
+    company: "Knowledge Square Services LLP",
+    date: "April 2025 – August 2025",
+    responsibilities: [
+      "Built AI automation tools",
+      "Created workflow automation using n8n",
+      "Mentored interns in Python",
+      "Contributed to startup technical planning",
+    ],
   },
 ];
 
-export const GITHUB_STATS = {
-  totalCommits: 1200,
-  totalRepos: 45,
-  totalStars: 150,
-  totalFollowers: 89,
-  languages: [
-    { name: "Python", percentage: 40, color: "#3776AB" },
-    { name: "JavaScript", percentage: 30, color: "#F7DF1E" },
-    { name: "TypeScript", percentage: 20, color: "#3178C6" },
-    { name: "C++", percentage: 10, color: "#00599C" },
+export const educationData: EducationProps[] = [
+  {
+    degree: "B.Tech Computer Science (Data Science)",
+    institution: "ITM Vocational University",
+    date: "Expected 2028",
+  },
+  {
+    degree: "Diploma in Computer Science & Engineering",
+    institution: "ITM Vocational University",
+    date: "Completed 2025",
+  },
+];
+
+export const contactData = {
+  email: "dhruvgtech@gmail.com",
+  social: [
+    {
+      label: "Github",
+      link: "https://github.com/dhruvpadhiyar18",
+      icon: Github,
+    },
+    {
+      label: "LinkedIn",
+      link: "https://www.linkedin.com/in/dhruvpadhiyar18",
+      icon: Linkedin,
+    },
   ],
 };
